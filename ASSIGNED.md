@@ -1,5 +1,19 @@
 #### MOVIE TICKET BOOKING SYSTEM SCENARIO
 
+> Topics in Module 2
+>> - Statement
+>> - Variables
+>> - Assignment statements
+>> - Arithmentic statements
+>> - Print and input fns
+>> - Comments
+>> - Conditional / Branching
+>> - if statement
+>> - match case
+>> - Formatting Strings and Decimals
+>> - Compound Data like string ,tuple ,Dictionary,Sets
+
+
 # Allow users to 
 -[x] Book tickets for various movies.
 -[x] Choose showtimes and ticket types (e.g., Standard or VIP).
