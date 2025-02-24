@@ -1,3 +1,5 @@
+# CPRG-216-B-Group-7-
+
 #### MOVIE TICKET BOOKING SYSTEM SCENARIO
 
 > Topics in Module 2
@@ -61,7 +63,7 @@ Movies
 
 
 
-# CPRG-216-B-Group-7-
+
 This is a repository meant to for group work for CPRG-216.
 
 [file:///C:/Users/Bianca%20Rogers/Downloads/Assignment%20Programing%20Strategies%20(1).pdf](url)
