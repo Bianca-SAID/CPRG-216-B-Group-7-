@@ -5,19 +5,17 @@ Description:
 """
 
 print('*' * 50)
-print("Welcome to Movie Booking System")
+print("{:>40}".format("Welcome to Movie Booking System"))
 print('*' * 50)
-
-# Implementing the movie section
-# Using the match case syntax
+print()
 print('*' * 50)
-print("Step 1: Select a Movie")
+print("{:>35}".format("Step 1: Select a Movie"))
 print('*' * 50)
 
 print("1. Avengers: Endgame($12.00)\n2.The Kitchen($10.00)\n3.Killers of the Flower Moon($8.00)\n4.Dune:Part Two($9.50)")
 
-movie = input("Your selection (1-4):")
-match movie:
+MOVIE = input("Your selection (1-4):")
+match MOVIE:
     case "1":
         print("You selected 'Avengers:Endgame' priced at $12.00")
     case "2":
