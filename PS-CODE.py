@@ -4,12 +4,12 @@ Group 7: Assignment: Programming Strategies
 Description:
 '''
 
+#Format the ticket header
 print('*' * 50)
-print("Welcome to Movie Booking System")
+print("{:>40}".format("Welcome to Movie Booking System"))
 print('*' * 50)
-
+print()
 print('*' * 50)
-print("Step 1: Select a Movie")
+print("{:>35}".format("Step 1: Select a Movie"))
 print('*' * 50)
-
-#comment test test test 
+print()
