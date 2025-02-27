@@ -47,5 +47,25 @@ match show:
     case _:
         print('Invalid Selection. Please choose a valid show time number.')
 
+#Ticket type selection table 3:
+print('*' * 50)
+print("{:>40}".format("Step 3: Choose Ticket type"))
+print('*' * 50)
+print("1. Standard (No additional charge)\n2. VIP (+$5.00)")
+ 
+ticket = input("Your selection (1-2): ")
+match ticket:
+    case "1":
+        print("You choose ticket 'You selected 'Standard' ticket priced at $12.00'")    
+    case  "2":
+        print("You selected 'VIP' ticket priced at $15.00")
+    case _:
+        print('Invalid selection. Please choose a valid ticket type number.')
+
+print(f"Total amount {51.45:>29.2f}")
+print('*' * 50)
+print("Thank you for choosing Movie Booking System!")
+
+
 
 
