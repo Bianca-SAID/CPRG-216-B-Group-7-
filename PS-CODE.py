@@ -46,6 +46,7 @@ match show:
         print("You selected show time '8:00 PM'")
     case _:
         print('Invalid Selection. Please choose a valid show time number.')
+<<<<<<< HEAD
 
 #Ticket type selection table 3:
 print('*' * 50)
@@ -69,3 +70,8 @@ print("Thank you for choosing Movie Booking System!")
 
 
 
+=======
+
+
+
+>>>>>>> 49f96bfc59b55930e153b58639c37ecc1ddd3cc6
