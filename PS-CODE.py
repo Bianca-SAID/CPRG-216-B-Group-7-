@@ -23,8 +23,8 @@ showTimes = {
 }
 
 addons = {
-    "1": {"3D Glasses": 3.00},
-    "2": {"Popcorn Combo": 7.00}
+    "1": {"3D Glasses": 3},
+    "2": {"Popcorn Combo": 7}
 }
 
 restart = True
@@ -41,7 +41,7 @@ while restart:
     movie = input("Your selection (1-4): ")
     if movie in movie_ticket_price:
         selected_movie = list(movie_ticket_price[movie].keys())[0]
-        price = movie_ticket_price[movie][selected_movie]
+        price = float(movie_ticket_price[movie][selected_movie])
         print(f"You selected '{selected_movie}' priced at ${price}")
     else:
         print('Invalid Selection. Please choose a valid movie number.')
@@ -77,27 +77,31 @@ while restart:
     print("1. 3D Glasses (+$3.00)\n2. Popcorn (+$7.00)\n0. Proceed without more add-ons")
     limit = 0
     addons_tracker = 0
+    addon_sum=0
     addon_mini_price = 0
     adding_addons = True
 
     while adding_addons:
         addon = input("Your selection (0-2): ")
         if addon in addons:
+            # Tracking the Add-ons Total
             selected_addon = list(addons[addon].keys())[0]
+            selected_addon_price = addons[addon][selected_addon]
             additional_addon_price = addons[addon][selected_addon]
-            total_addon_price = addons_tracker + additional_addon_price
-            addon_mini_price = total_addon_price
-            additional_price = addons[addon][selected_addon]
-            total_price = total_price + additional_price
+            addons_tracker = addons_tracker + additional_addon_price
+            total_price = total_price + selected_addon_price
 
             if limit >= 1 and addon == "1":
+                addons_tracker = addons_tracker-3
                 print("You cannot select 3D Glasses more than once")
+
             else:
                 limit += 1
-                print(f"'{selected_addon}' added for ${additional_price}")
+                print(f"'{selected_addon}' added for ${selected_addon_price}")
+
         elif addon == "0":
-            print("Add-ons total: $", addon_mini_price)
-            print("Total cost for this ticket: $", total_price)
+            print("Add-ons total:$",addons_tracker) #Corrected
+            print("Total cost for this ticket:$",total_price)
             adding_addons = False
         else:
             print("Invalid selection. Please choose a valid add-on number.")
