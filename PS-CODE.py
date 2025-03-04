@@ -3,7 +3,6 @@ CPRG-216-B
 Group 7: Assignment: Programming Strategies
 Description:
 """
-from json.encoder import INFINITY
 
 movie_ticket_price ={
     "1":{"Avengers:Endgame":12.00},
@@ -87,9 +86,10 @@ print("1. 3D Glasses (+$3.00)\n2. Popcorn (+$7.00)\n0.Proceed without more add-o
 limit=0
 addons_tracker =0
 addon_mini_price=0
+
+
 while True:
     addon = input("Your selection (0-2): ")
-
     if addon in addons:
         selected_addon = list(addons[addon].keys())[0]
         additional_addon_price = addons[addon][selected_addon]
@@ -106,6 +106,16 @@ while True:
     if addon== "0":
         print("Add-ons total:$",addon_mini_price)
         print("Total cost for this ticket:$",total_price)
+        request = input("Would you like to book another ticket? (Y/N)")
+        match request.lower():
+            case "y":
+                pass
+            case 'n':
+                print("Billing Report")
+                print("Number of booked tickets")
+                print("Subtotal before discounts")
+                print("GST")
+                print("Total Amount")
 
 
 
@@ -126,37 +136,6 @@ while True:
 
 
 
-    # match selection:
-    #     case "1":
-    #         if limit >= 1:
-    #             print("You cannot select 3D Glasses more than once.")
-    #         else:
-    #             limit += 1
-    #             total_addons_cost += addons['3D Glasses']
-    #             print(f"3D Glasses added for (${addons['3D Glasses']})")
-    #
-    #     case "2":
-    #         total_addons_cost += addons['Popcorn Combo']
-    #         print(f"Popcorn Combo added for (${addons['Popcorn Combo']})")
-    #
-    #     case "0":
-    #         print("Add-ons total:$0.00")
-    #         # if ticket in ticket_data:
-    #         #     print("Total cost for the ticket is ",ticket_data[ticket])
-    #
-    #         if ticket == "1":
-    #             print("Total cost for this ticket is ", ticket_types['1'])
-    #         else:
-    #             print("Total cost for this ticket is ", ticket_types['2'])
-    #         print("Would you like to continue? (y/n)")
-
-
-
-        # case _:
-        #     print("Invalid selection. Please choose a valid option.")
-        # continue_choice = input("Would you like to continue? (y/n): ")
-        # if continue_choice.lower() != 'y':
-        # break
 
 
 
@@ -170,9 +149,6 @@ while True:
 
 
 
-
-# ======================================================================================================
-# COST CALCULATION
 
 
 
