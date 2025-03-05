@@ -4,6 +4,9 @@ Group 7: Assignment: Programming Strategies
 Description:
 """
 
+from typing import final
+discount_percentage:final =0.95
+GST_percentage:final =0.05
 movie_ticket_price = {
     "1": {"Avengers: Endgame": 12.00},
     "2": {"The Kitchen": 10.00},
@@ -104,8 +107,8 @@ while restart:
     request = input("Would you like to book another ticket? (Y/N): ")
     if request.lower() == 'n':
         if sub_total > 50:
-            discount1 = 0.95 * sub_total
-            GST_Amount = 0.05 * sub_total
+            discount1 = discount_percentage * sub_total
+            GST_Amount = GST_percentage * sub_total
             Total_amount = sub_total - (sub_total - discount1) + GST_Amount
             print("*****Billing Report****")
             print("Number of booked tickets")
