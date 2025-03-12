@@ -30,8 +30,8 @@ addons = {
     "2": {"Popcorn Combo": 7}
 }
 
-restart = True
-while restart:
+continue_booking ="y"
+while continue_booking=="y":
     print('*' * 50)
     print("{:>40}".format("Welcome to Movie Booking System"))
     print('*' * 50)
@@ -115,7 +115,7 @@ while restart:
             print(f"Subtotal before discounts", {sub_total})
             print("GST(5%)", GST_Amount)
             print("Total Amount", Total_amount)
-        restart = False
+        continue = False
 
 
 
