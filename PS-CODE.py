@@ -115,7 +115,7 @@ while continue_booking=="y":
             print(f"Subtotal before discounts", {sub_total})
             print("GST(5%)", GST_Amount)
             print("Total Amount", Total_amount)
-        continue = False
+        # continue = False
 
 
 
