@@ -80,42 +80,77 @@ while continue_booking=="y":
         break
 
     print("1. 3D Glasses (+$3.00)\n2. Popcorn (+$7.00)\n0. Proceed without more add-ons")
-    selected_addons = set()
-    addon_sum = 0
-    adding_addons = True
-    sub_total = 0
+    # selected_addons = set()
+    # addon_sum = 0
+    # adding_addons = "y"
+    # sub_total = 0
 
-    while adding_addons:
-        addon = input("Your selection (0-2): ")
-        if addon in addons:
-            if addon == "1" and addon in selected_addons:
-                print("You cannot select 3D Glasses more than once")
+    # while adding_addons:
+    #     addon = input("Your selection (0-2): ")
+    #     if addon in addons:
+    #         if addon == "1" and addon in selected_addons:
+    #             print("You cannot select 3D Glasses more than once")
+    #         else:
+    #             selected_addons.add(addon)
+    #             selected_addon = list(addons[addon].keys())[0]
+    #             selected_addon_price = addons[addon][selected_addon]
+    #             addon_sum += selected_addon_price
+    #             total_price += selected_addon_price
+    #             print(f"'{selected_addon}' added for ${selected_addon_price}")
+    #     elif addon == "0":
+    #         print("Add-ons total: $", addon_sum)
+    #         print("Total cost for this ticket: $", total_price)
+    #         adding_addons = False
+    #     else:
+    #         print("Invalid selection. Please choose a valid add-on number.")
+    addon_sum = 0
+    adding_addons = "y"
+    selected_3d_glasses = False  # Track if "3D Glasses" has already been selected
+
+    while adding_addons == "y":
+        addon = input("Your selection (1 for 3D Glasses, 2 for Popcorn Combo, 0 to stop): ")
+
+        if addon == "1":
+            if selected_3d_glasses:  # Check if 3D Glasses have already been selected
+                print("You cannot select 3D Glasses more than once.")
             else:
-                selected_addons.add(addon)
+                selected_3d_glasses = True
                 selected_addon = list(addons[addon].keys())[0]
                 selected_addon_price = addons[addon][selected_addon]
                 addon_sum += selected_addon_price
-                total_price += selected_addon_price
-                print(f"'{selected_addon}' added for ${selected_addon_price}")
+                print(f"'{selected_addon}' added for ${selected_addon_price:.2f}")
+
+        elif addon == "2":
+            selected_addon = list(addons[addon].keys())[0]
+            selected_addon_price = addons[addon][selected_addon]
+            addon_sum += selected_addon_price
+            print(f"'{selected_addon}' added for ${selected_addon_price:.2f}")
+
         elif addon == "0":
-            print("Add-ons total: $", addon_sum)
-            print("Total cost for this ticket: $", total_price)
-            adding_addons = False
+            print(f"Add-ons total: ${addon_sum:.2f}")
+            adding_addons = "n"  # Exit the loop
+
         else:
             print("Invalid selection. Please choose a valid add-on number.")
 
     request = input("Would you like to book another ticket? (Y/N): ")
     if request.lower() == 'n':
-        if sub_total > 50:
-            discount1 = discount_percentage * sub_total
-            GST_Amount = GST_percentage * sub_total
-            Total_amount = sub_total - (sub_total - discount1) + GST_Amount
-            print("*****Billing Report****")
-            print("Number of booked tickets")
-            print(f"Subtotal before discounts", {sub_total})
-            print("GST(5%)", GST_Amount)
-            print("Total Amount", Total_amount)
-        # continue = False
+        continue_booking = "n"
+    else:
+        continue_booking = "y"
+
+    # discount1 = discount_percentage * sub_total
+    # GST_Amount = GST_percentage * sub_total
+    # Total_amount = sub_total - (sub_total - discount1) + GST_Amount
+    # print("*****Billing Report****")
+    # print("Number of booked tickets")
+    # print(f"Subtotal before discounts", {sub_total})
+    # print("GST(5%)", GST_Amount)
+    # print("Total Amount", Total_amount)
+
+
+
+
 
 
 
